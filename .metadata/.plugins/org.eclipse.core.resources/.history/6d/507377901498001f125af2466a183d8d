@@ -1,0 +1,5 @@
+package com.springboot.springapp.service;
+
+public class MyService {
+
+}

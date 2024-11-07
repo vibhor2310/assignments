@@ -1,0 +1,5 @@
+package com.spring.sms.repository;
+
+public class StudentRepository {
+
+}

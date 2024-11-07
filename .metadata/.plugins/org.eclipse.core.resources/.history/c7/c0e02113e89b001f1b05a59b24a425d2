@@ -1,0 +1,59 @@
+package com.spring.bank.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.spring.bank.model.Account;
+
+@Repository
+public class AccountRepository {
+	
+	@Autowired
+	private JdbcTemplate jdbc; 
+
+	public List<Account> fetchAllAccounts() {
+		String sql = "select a.id as account_id , a.account_number ,a.account_type, a.balance from account a";
+		
+		PreparedStatementCreator psc = new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement pstmt =  con.prepareStatement(sql);
+				return pstmt;
+			}
+		};
+		
+		RowMapper<Account> rowMapper = new RowMapper<Account>() {
+			
+			@Override
+			public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Account account = new Account();
+			int accountId = rs.getInt("account_id");
+			String accountNumber = rs.getString("account_number");
+			String accountType = rs.getString("account_type");
+			double balance = rs.getDouble("balance");
+			account.setId(accountId);
+			account.setAccount_number(accountNumber);
+			account.setAccount_type(accountType);
+			account.setBalance(balance);
+			
+			return account;
+			}
+		};
+		
+		List <Account> list = jdbc.query(psc, rowMapper);
+		 
+		return list;
+		
+	}
+
+}

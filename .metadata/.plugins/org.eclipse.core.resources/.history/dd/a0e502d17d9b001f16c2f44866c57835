@@ -1,0 +1,21 @@
+package com.spring.bank.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.spring.bank.model.Account;
+import com.spring.bank.repository.AccountRepository;
+
+
+public class AccountService {
+	
+	@Autowired
+	private AccountRepository accountRepository;
+
+	public List<Account> fetchAllAccounts() {
+		
+		return accountRepository.fetchAllCourses();
+	}
+
+}

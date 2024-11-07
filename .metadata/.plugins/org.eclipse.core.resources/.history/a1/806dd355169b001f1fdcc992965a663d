@@ -1,0 +1,5 @@
+package com.spring.sms.exception;
+
+public class InvalidCredentialsException {
+
+}

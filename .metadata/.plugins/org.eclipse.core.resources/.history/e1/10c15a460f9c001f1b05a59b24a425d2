@@ -1,0 +1,5 @@
+package com.springboot.insurance_app.dto;
+
+public class ResponseMessageDto {
+
+}

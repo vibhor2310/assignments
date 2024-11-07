@@ -1,0 +1,15 @@
+package com.springboot.insurance_app.service;
+
+import org.springframework.stereotype.Service;
+
+import com.springboot.insurance_app.model.PolicyHolder;
+
+@Service
+public class PolicyHolderService {
+
+	public PolicyHolder insert(PolicyHolder policyHolder) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

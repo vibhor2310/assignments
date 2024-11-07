@@ -1,0 +1,28 @@
+package com.spring.bank.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.bank.model.Account;
+import com.spring.bank.repository.AccountRepository;
+
+
+@Service
+public class AccountService {
+	
+	@Autowired
+	private AccountRepository accountRepository;
+
+	public List<Account> fetchAllAccounts() {
+		
+		return accountRepository.fetchAllAccounts();
+	}
+
+	public void softDelete(String aid) {
+		accountRepository.softDelete(Integer.parseInt(aid));
+		
+	}
+
+}

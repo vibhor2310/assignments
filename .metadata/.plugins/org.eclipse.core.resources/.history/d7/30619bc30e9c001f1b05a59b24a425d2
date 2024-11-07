@@ -1,0 +1,5 @@
+package com.springboot.insurance_appexception;
+
+public class ResourceNotFoundException {
+
+}

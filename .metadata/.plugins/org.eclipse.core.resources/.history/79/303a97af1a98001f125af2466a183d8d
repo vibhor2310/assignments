@@ -1,0 +1,14 @@
+package com.springboot.springapp.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan(basePackages = {"org.springframework.stereotype.Controller"}) // its if it not auto detecting then we can do this manually
+public class SpringConfig {
+	
+	static {
+		System.out.println("Spring config class loaded.....");
+	}
+
+}

@@ -1,0 +1,37 @@
+package com.spring.bank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.spring.bank.model.User;
+import com.spring.bank.service.CustomerService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+public class CustomerController {
+	
+	@Autowired
+	private CustomerService customerService; // DI
+	
+	@GetMapping("/")
+	public String showLogin() {
+		return "login";
+		
+	}
+	
+	@GetMapping("/login-form")
+	public String handleLogin(HttpServletRequest req) {
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+		
+		User user = customerService.verifyLogin(username,password);
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

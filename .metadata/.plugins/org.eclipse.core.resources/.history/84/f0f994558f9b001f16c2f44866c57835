@@ -1,0 +1,35 @@
+package com.spring.bank.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+
+import com.spring.bank.model.Account;
+
+public class AccountRepository {
+	
+	@Autowired
+	private JdbcTemplate jdbc; 
+
+	public List<Account> fetchAllAccounts() {
+		String sql = "select a.id as account_id , a.account_number , a.balance from account a";
+		
+		PreparedStatementCreator psc = new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement pstmt =  con.prepareStatement(sql);
+				return pstmt;
+			}
+		};
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.spring.bank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.spring.bank.service.CustomerService;
+
+public class CustomerController {
+	
+	@Autowired
+	private CustomerService customerService; // DI
+	
+	@GetMapping("/")
+	public String showLogin() {
+		return "login";
+		
+	}
+	
+	
+	
+	
+
+}

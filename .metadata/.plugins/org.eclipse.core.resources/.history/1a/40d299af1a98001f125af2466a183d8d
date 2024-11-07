@@ -1,0 +1,18 @@
+package com.springboot.springapp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.springboot.springapp.service.MyService;
+
+@Controller
+public class MyController {
+	
+	static {
+		System.out.println("My Controller loaded ......");
+	}
+	
+	@Autowired
+	private MyService myService;
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;springapp/src/main/resources/META-INF/resources/WEB-INF/views/jsp_demp.jsp&apos; to &apos;jsp_demo.jsp&apos;" description="Rename resource &apos;jsp_demp.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/META-INF/resources/WEB-INF/views/jsp_demp.jsp" name="jsp_demo.jsp" stamp="1730733247914" updateReferences="true"/>
+</session>

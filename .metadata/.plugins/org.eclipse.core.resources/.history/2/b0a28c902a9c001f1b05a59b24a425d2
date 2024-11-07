@@ -1,0 +1,27 @@
+package com.springboot.insurance_app.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springboot.insurance_app.model.PolicyHolder;
+import com.springboot.insurance_app.repository.PolicyHolderRepository;
+
+@Service
+public class PolicyHolderService {
+	
+	@Autowired
+	private PolicyHolderRepository policyHolderRepository;
+
+	public PolicyHolder insert(PolicyHolder policyHolder) {
+		return policyHolderRepository.save(policyHolder);
+		
+	}
+
+	public List<PolicyHolder> getAllPolicyHolder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

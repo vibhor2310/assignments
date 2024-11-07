@@ -1,0 +1,31 @@
+package com.spring.bank.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.bank.exception.InvalidCredentialsException;
+import com.spring.bank.model.Customer;
+import com.spring.bank.model.User;
+import com.spring.bank.repository.CustomerRepository;
+
+@Service
+public class CustomerService {
+	
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	public User verifyLogin(String username, String password) throws InvalidCredentialsException {
+		
+		return customerRepository.verifyLogin(username,password);
+		
+		
+		
+		
+	}
+
+	public void save(Customer newCustomer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
